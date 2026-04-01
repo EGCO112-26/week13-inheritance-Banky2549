@@ -3,27 +3,26 @@
 
 class student:public MU_person{
 private:
-          double gpa; 
+          double gpa;
 	
 public:
-    student(long=111 ,double=2.5,string="Nattawut");
+    student(long=111 ,double=2.5,string="Nattawut",long=555 );
     ~student();
-    void display(); // display_person
+    void display();
    
 };
 
-student::student(long i, double g,string s){
-// Finish constructor to set all values
+student::student(long i, double g,string s,long nid): MU_person(i,s,nid){
+        gpa=g;
          cout<<"MU student constructor  "<<gpa<<endl;
-         
-  
 }
+
 student::~student(){
      cout<<"-------"<<endl;
      cout<<"student destructor "<<gpa<<endl; 
 }
 
-
 void student::display(){
-  //Finish Display function
+  display_person();
+  cout<<"Gpa: "<<gpa<<endl;
 }
